@@ -18,9 +18,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun MenuScreen() {
+fun MenuScreen(navController: NavController) {
     Box(modifier = Modifier.fillMaxSize()
         .background(Color(0xFFE0CFFF))
         .padding(32.dp)
@@ -39,7 +40,7 @@ fun MenuScreen() {
             verticalArrangement = Arrangement.spacedBy(16.dp)) {
 
             Button(
-                onClick = {/* TODO */},
+                onClick = {navController.navigate("perfil/Lua/18")},
                 colors = ButtonDefaults.buttonColors(
                     Color(0xFFF6EFBC)
                 ),
@@ -54,7 +55,7 @@ fun MenuScreen() {
             }
 
             Button(
-                onClick = {/* TODO */},
+                onClick = {navController.navigate("pedidos?numeroPedido=666")},
                 colors = ButtonDefaults.buttonColors(
                     Color(0xFFFCF5D9)
                 ),
@@ -69,7 +70,7 @@ fun MenuScreen() {
             }
 
             Button(
-                onClick = {/* TODO */},
+                onClick = {navController.popBackStack()},
                 colors = ButtonDefaults.buttonColors(
                     Color(0xFFF6EFBC)
                 ),

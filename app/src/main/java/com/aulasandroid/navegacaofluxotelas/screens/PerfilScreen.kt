@@ -14,22 +14,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun perfilScreen(){
+fun perfilScreen(navController: NavController,
+                 nome: String,
+                 idade: Int){
     Box(modifier = Modifier.fillMaxSize()
         .background(Color(0xFFD3C3F8))
         .padding(32.dp)
     ){
         Text(
-            text = "PERFIL",
+            text = "PERFIL - $nome - $idade",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color(161, 117, 243, 255)
         )
 
         Button(
-            onClick = {/* TODO */},
+            onClick = {navController.popBackStack()},
             colors = ButtonDefaults.buttonColors(
                 Color.White
             ),

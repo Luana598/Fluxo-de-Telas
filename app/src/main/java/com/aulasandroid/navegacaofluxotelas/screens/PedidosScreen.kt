@@ -14,22 +14,24 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun pedidosScreen(){
+fun pedidosScreen(navController: NavController,
+                  numeroPedido: String){
     Box(modifier = Modifier.fillMaxSize()
         .background(Color(0xFF9FC7F1))
         .padding(32.dp)
     ){
         Text(
-            text = "PEDIDOS",
+            text = "PEDIDOS - $numeroPedido",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color(58, 111, 155, 255)
         )
 
         Button(
-            onClick = {/* TODO */},
+            onClick = {navController.popBackStack()},
             colors = ButtonDefaults.buttonColors(
                 Color.White
             ),
